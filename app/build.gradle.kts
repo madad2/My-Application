@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.retrofit) // retrofit itself
     implementation(libs.kotlinx.serialization) // support for kotlinx-serialization
     implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.lifecycle.viewmodel.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
