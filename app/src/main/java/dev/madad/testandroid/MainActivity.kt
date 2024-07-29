@@ -8,13 +8,14 @@ import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import dev.madad.testandroid.databinding.ActivityMainBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import dev.madad.testandroid.model.models.UiConfig
 import kotlinx.coroutines.launch
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                     is UiState.Error -> {
                         // показать сообщение с ошибкой
                         progressBar.visibility = View.GONE
+                        Toast.makeText(applicationContext, "Что то не так", Toast.LENGTH_LONG).show()
                     }
                 }
 

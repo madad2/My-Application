@@ -3,12 +3,12 @@ package dev.madad.testandroid
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.madad.testandroid.model.models.UiConfig
-import dev.madad.testandroid.model.repositories.MainRepository
+import dev.madad.testandroid.model.repositories.Repository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class MainViewModel(private val repository: MainRepository) : ViewModel() {
+class MainViewModel(private val repository: Repository) : ViewModel() {
     private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
     val uiState: StateFlow<UiState> = _uiState
 
