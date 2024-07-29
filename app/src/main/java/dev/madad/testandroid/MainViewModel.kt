@@ -12,7 +12,11 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
     private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
     val uiState: StateFlow<UiState> = _uiState
 
-    fun getUiConfiguration() {
+    init {
+        getUiConfiguration()
+    }
+
+    private fun getUiConfiguration() {
         viewModelScope.launch {
             _uiState.value = UiState.Loading
             try {

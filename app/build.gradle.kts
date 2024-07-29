@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -48,8 +51,8 @@ dependencies {
     implementation(libs.kotlinx.serialization) // support for kotlinx-serialization
     implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.lifecycle.viewmodel.ktx)
+    // Koin для Android
     implementation(libs.koin.android)
-    implementation(libs.koin.androidx.viewmodel)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

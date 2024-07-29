@@ -9,15 +9,11 @@ import kotlinx.serialization.json.Json
 object RetrofitClient {
     private const val BASE_URL = "https://gist.githubusercontent.com/vth2k"
 
-    @OptIn(ExperimentalSerializationApi::class)
-    private val retrofit by lazy {
-        Retrofit.Builder()
+    fun create(): ApiService {
+        val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
             .build()
-    }
-
-    val api: AppApi by lazy {
-        retrofit.create(AppApi::class.java)
+        return retrofit.create(ApiService::class.java)
     }
 }
