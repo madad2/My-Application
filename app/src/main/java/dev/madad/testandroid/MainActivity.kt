@@ -1,6 +1,7 @@
 package dev.madad.testandroid
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -13,8 +14,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import dev.madad.testandroid.databinding.ActivityMainBinding
+import dev.madad.testandroid.model.models.config.UiConfig
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import dev.madad.testandroid.model.models.UiConfig
 import kotlinx.coroutines.launch
 
 
@@ -49,7 +50,8 @@ class MainActivity : AppCompatActivity() {
                     is UiState.Error -> {
                         // показать сообщение с ошибкой
                         progressBar.visibility = View.GONE
-                        Toast.makeText(applicationContext, "Что то не так", Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, state.error, Toast.LENGTH_LONG)
+                            .show()
                     }
                 }
 
@@ -62,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         val header = TextView(this).apply {
             text = activityConfig.layout.header
+            layout.gravity = Gravity.CENTER
         }
         layout.addView(header)
 

@@ -2,7 +2,7 @@ package dev.madad.testandroid
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.madad.testandroid.model.models.UiConfig
+import dev.madad.testandroid.model.models.config.UiConfig
 import dev.madad.testandroid.model.repositories.Repository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
