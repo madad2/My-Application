@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="worked_out_hours">Worked Out Hours</string>
+    <string name="work_hours_in_month">Work Hours in Month</string>
+    <string name="position">Position</string>
+    <string name="full_name">Full Name</string>
 </resources>

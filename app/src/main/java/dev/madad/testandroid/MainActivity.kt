@@ -1,5 +1,6 @@
 package dev.madad.testandroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import dev.madad.testandroid.databinding.ActivityMainBinding
 import dev.madad.testandroid.model.models.config.UiConfig
+import dev.madad.testandroid.view.UserInfoActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlinx.coroutines.launch
 
@@ -97,7 +99,10 @@ class MainActivity : AppCompatActivity() {
             val button = android.widget.Button(this).apply {
                 text = buttonConfig.caption
                 setOnClickListener {
-                    // прослушать кнопку
+                    val intent = Intent(this@MainActivity, UserInfoActivity::class.java).apply {
+                        putExtra("formAction", buttonConfig.formAction)
+                    }
+                    startActivity(intent)
                 }
             }
             layout.addView(button)
